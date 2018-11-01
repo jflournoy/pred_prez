@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction and Discussion of Dysdale et al.</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc" />
+
+
+
+  <meta name="date" content="2018-11-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <base target="_blank">
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                title: 'Introduction and Discussion of Dysdale et al.',
+                        useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+                      },
+
+      // Author information
+      presenters: [
+            {
+        name:  'John Flournoy' ,
+        company: '',
+        gplus: '',
+        twitter: '',
+        www: '',
+        github: ''
+      },
+            ]
+    };
+  </script>
+
+  <link href="index_files/ioslides-13.5.1/fonts/fonts.css" rel="stylesheet" />
+  <link href="index_files/ioslides-13.5.1/theme/css/default.css" rel="stylesheet" />
+  <link href="index_files/ioslides-13.5.1/theme/css/phone.css" rel="stylesheet" />
+  <script src="index_files/ioslides-13.5.1/js/modernizr.custom.45394.js"></script>
+  <script src="index_files/ioslides-13.5.1/js/prettify/prettify.js"></script>
+  <script src="index_files/ioslides-13.5.1/js/prettify/lang-r.js"></script>
+  <script src="index_files/ioslides-13.5.1/js/prettify/lang-yaml.js"></script>
+  <script src="index_files/ioslides-13.5.1/js/hammer.js"></script>
+  <script src="index_files/ioslides-13.5.1/js/slide-controller.js"></script>
+  <script src="index_files/ioslides-13.5.1/js/slide-deck.js"></script>
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+
+  </style>
+
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+            <p style="margin-top: 6px; margin-left: -2px;">2018-11-01</p>
+          </hgroup>
+  </slide>
+
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Origin story</h2></hgroup><article  id="origin-story">
+
+</article></slide><slide class=""><hgroup><h2>Where I started: What is the nature of reality?</h2></hgroup><article  id="where-i-started-what-is-the-nature-of-reality">
+
+<p><em>inspired by Nessa</em></p>
+
+<ul class = 'build'>
+<li>Drilling into the micro with physics</li>
+<li>Decomposing consciousness</li>
+<li>Neuropharmacology of romantic love</li>
+<li>Understanding other minds</li>
+<li>Grad school! Social effects on decision making, motivation, learning</li>
+<li><strong>Application of psychological science to physical and mental health risks faced by adolescents.</strong></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>What have I been working on?</h2></hgroup><article  id="what-have-i-been-working-on">
+
+<ul class = 'build'>
+<li><div style="float:left;width:30%;padding-right:1em">
+<p>How adolescent development of empathy is related to prosocial behavior</p>
+
+<img src = 'figures/empathy.png' style="height:6em" /></div></li>
+<li><div style="float:left;width:30%;padding-right:1em">
+<p>Lifespan development of personality &amp; values</p>
+
+<img src = 'figures/value_dev.png' style="height:10em;display:inline" /></div></li>
+<li><div style="float:left;width:30%;padding-right:1em">
+<p>Association between SES and temporal discounting</p>
+
+<p><img src = 'figures/discounting_task.png' style="height:6em" /></p>
+
+<img src = 'figures/discounting_eq.png' style="height:3em" /></div></li>
+<li>and the diss&#8230;</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Measuring social motives via RL</h2></hgroup><article  id="measuring-social-motives-via-rl">
+
+<ul class = 'build'>
+<li><em>Goal of research program:</em> examine adolescent behavior through a functional lens
+
+<ul class = 'build'>
+<li>Assume that behavior is in part directed toward satisfying developing social motivations for status and romantic relationships.</li>
+</ul></li>
+<li><em>Problem:</em> measuring motivations via a behavioral mechanism</li>
+<li><em>Solution:</em> describe how social content (related to implicit motives) potentiates reinforcement learning (via stimulus salience)
+
+<ul class = 'build'>
+<li>How does learning, and social potentiation of learning, differ across adolescent development?</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Social motives affect learning</h2></hgroup><article  id="social-motives-affect-learning">
+
+<p><img src="figures/trial_by_trial.png" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Learning improves through adolescence</h2></hgroup><article  id="learning-improves-through-adolescence">
+
+<p><img src="figures/poptageplot-1.png" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Learning potentiation is stable</h2></hgroup><article  id="learning-potentiation-is-stable">
+
+<p><img src="figures/poptdiffageplot-1.png" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Looking ahead&#8230;</h2></hgroup><article  id="looking-ahead...">
+
+<ol class = 'build'>
+<li>How do daily emotional dynamics relate to stress and psychopathology symptoms?</li>
+<li><strong>As children enter adolescence, can we identify who is at risk for psychopathology?</strong></li>
+</ol>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>INTERMISSION</h2></hgroup><article  id="intermission">
+
+</article></slide><slide class=""><hgroup><h2>Biotyping and prediction in Generation R</h2></hgroup><article  id="biotyping-and-prediction-in-generation-r">
+
+<p>Collaborator: Henning Tiemeier, MA, MD, PhD; professor HSPH</p>
+
+<p>The Generation R Study is a large, prospective population-based birth-cohort in which nearly 10,000 pregnant mothers were recruited between 2002 and 2006 with repeated measurements in the children and their parents over time.</p>
+
+<ul class = 'build'>
+<li>3,439 9-to-11-year-old children w/rsfMRI (6 mins)</li>
+<li>CBCL from primary and secondary caregivers</li>
+<li>DISC-YC (218 w/a diagnosis, 460 dx ruled out)</li>
+<li>Stressful Life Events Questionnaire</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Biotypes and Prediction</h2></hgroup><article  id="biotypes-and-prediction">
+
+<p>Drysdale, A. T., Grosenick, L., Downar, J., Dunlop, K., Mansouri, F., Meng, Y., … Liston, C. (2016). Resting-state connectivity biomarkers define neurophysiological subtypes of depression. Nature Medicine, 23(1), 28–38. <a href='https://doi.org/10.1038/nm.4246' title=''>https://doi.org/10.1038/nm.4246</a></p>
+
+<ol class = 'build'>
+<li>Clustering based on rsfMRI to define Biotypes</li>
+<li>Predicting diagnostic category with rsfMRI (with the help of biotypes)</li>
+</ol>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Clustering patients into depression subtypes</h2></hgroup><article  id="clustering-patients-into-depression-subtypes">
+
+<p><strong>Why are there clusters in the first place? Do they vary by kind or continuous variation? Do these clusters appear in healthy populations as well? - Gina</strong></p>
+
+</article></slide><slide class=""><hgroup><h2>Taxonomy versus Dimensionality</h2></hgroup><article  id="taxonomy-versus-dimensionality">
+
+<blockquote>
+<p>A taxon is a nonarbitrary class whose existence is conjectured as an empirical question, not a mere semantic convenience. Numerous taxa are known to exist in nature and society&#8230;. What personality types, if any, occur in the nonpathological population remains to be researched by sophisticated methods, and cannot be settled by fiat or &quot;dimensional&quot; preference. The intuitive concept of taxonicity is to be explicated by a combination of formal-numerical and causal criteria. Taxometric methods should include consistency tests that provide Popperian risk of strong discorroboration. (Meehl, 1992)</p>
+</blockquote>
+
+<p>&quot;Differences of kind rather than degree&quot;</p>
+
+</article></slide><slide class=""><hgroup><h2>Dimensional example</h2></hgroup><article  id="dimensional-example">
+
+<blockquote>
+<p>[Dimensional models]&#8230;treat underlying liability as a continuous phenomenon, with individuals varying along a continuous, graded range of liability to disorder. Another tractable possibility is to treat the liabilities as discrete, with individuals being members of discrete classes or groups of individuals. Under the former conceptualization, liability represents a continuum of risk to disorder; under the latter conceptualization, liability represents types or categories of risk to disorder. (Krueger &amp; Markin, 2006)</p>
+</blockquote>
+
+<p><img src="figures/krueger_fig2.png" style="width:60%;float:right" /> Powerful for describing comorbidity</p>
+
+</article></slide><slide class=""><hgroup><h2>Taxometric example</h2></hgroup><article  id="taxometric-example">
+
+</article></slide><slide class=""><hgroup><h2>Taxometric example</h2></hgroup><article  id="taxometric-example-1">
+
+</article></slide><slide class=""><hgroup><h2>Clustering algorithms</h2></hgroup><article  id="clustering-algorithms">
+
+<p>Let&#39;s say we know there are 3 species, but we don&#39;t know which is which.</p>
+
+<div style="width:40%; float:right">
+<table class = 'rmdtable'>
+<tr class="header">
+<th align="right">setosa</th>
+<th align="right">versicolor</th>
+<th align="right">virginica</th>
+</tr>
+<tr class="odd">
+<td align="right">50</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">23</td>
+<td align="right">49</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">27</td>
+<td align="right">1</td>
+</tr>
+</table></div>
+
+<div style="float:left; width = 40%">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="576" /></p></div>
+
+<p><br /><br /></p>
+
+<ul class = 'build'>
+<li>It&#39;s easy to separate Setosa, but not so much Versicolor &amp; Virginica. Other choices of algorithm and variable-sets (I used all 4) produce better results.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Drysdale et al&#39;s clustering</h2></hgroup><article  id="drysdale-et-als-clustering">
+
+<p><img src="figures/fig1_ef.png" style="width:60%" /></p>
+
+<ul class = 'build'>
+<li>Back to Gina&#39;s questions:
+
+<ul class = 'build'>
+<li>Why would we expect people to be separable into subtypes?</li>
+<li>Why is this useful?</li>
+</ul></li>
+<li>What variables are they using as input to the cluster algorithm?
+
+<ul class = 'build'>
+<li>Canonical Variates</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Canonical Correlation Analysis</h2></hgroup><article  id="canonical-correlation-analysis">
+
+<p>What is it?</p>
+
+<ul class = 'build'>
+<li><p>In regression, you want the linear combination of predictor variables, \(X\), that gets you closest to your observed outcomes, \(y\):</p>
+
+<p>\(y = \beta_0 + \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + ... + \beta_n \cdot x_n + \epsilon\)</p>
+
+<p>In other words, we want to choose all the \(\beta\)s so that \(\epsilon\) is as small as possible.</p></li>
+<li><p>If you have multiple \(y\) variables, CCA does something like this <em>on both sides</em>*:</p>
+
+<p>\(\pi_1 \cdot y_1 + \pi_2 \cdot y_2 + ... + \pi_n \cdot y_n = \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + ... + \beta_n \cdot x_n + \epsilon\)</p></li>
+</ul>
+
+<div style="font-size: .5em">
+*<em>for conceptual purposes only</em>. Find a good geometric explanation <a href='https://stats.stackexchange.com/questions/65692/how-to-visualize-what-canonical-correlation-analysis-does-in-comparison-to-what' title=''>here</a>, and mathy stuff <a href='https://www.cs.cmu.edu/~tom/10701_sp11/slides/CCA_tutorial.pdf' title=''>here</a></div>
+
+</article></slide><slide class=""><hgroup><h2>Canonical Variates</h2></hgroup><article  id="canonical-variates">
+
+<ul class = 'build'>
+<li>You find the set of \(\pi\) and \(\beta\) coefficients so that when you do the math on both sides, the result is maximally correlated.</li>
+<li>For example, for 3 \(x\) and 3 \(y\) variables \(V_y = p_1 \cdot y_1 + p_2\cdot y_2 + p_3\cdot y_3\), \(V_x = b_1 \cdot x_1 + b_2\cdot x_2 + b_3\cdot x_3\), you want to set all the \(p\)s and \(b\)s so that you maximize the correlation between \(V_y\) and \(V_x\).</li>
+<li>\(V_y\) and \(V_x\) are now your first pair of <em>Cannonical Variates</em>.</li>
+<li>You can do this again to get another pair that isn&#39;t correlated to the first pair.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Understanding how clustering inputs are constructed</h2></hgroup><article  id="understanding-how-clustering-inputs-are-constructed">
+
+<p>For n = 220 diagnosed with depression (low comorbidity)</p>
+
+<ul class = 'build'>
+<li><img src="figures/rsfmri_input.png" style="float:right;width:60%" /> Resting state input: Select only those 33,154 correlations which were significantly (\(\alpha = .005\)) correlated with at least 1 of 17 HAMD-17 responses</li>
+<li>Depression symptom input: 17 HAMD-17 items</li>
+<li>CCA(selected rsfMRI, HAMD) produced 2 pairs of canonical variates</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Interpreting clusters</h2></hgroup><article  id="interpreting-clusters">
+
+<ul class = 'build'>
+<li><img src="figures/fig1_f.png" style="float:right;width:37%"/> Clustering is done on two weighted sums of rsfMRI correlations that best approximate weighted sums of depression symptoms.</li>
+<li>Gina&#39;s final question: What would we expect from non-diagnosed participants? <img src="figures/all_sympt.png" /></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Interpreting rsfMRI differences</h2></hgroup><article  id="interpreting-rsfmri-differences">
+
+<p><img src="figures/fig2_b.png" style="width:30%" /> <img src="figures/fig2_e.png" style="width:96%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Looking toward Gen R</h2></hgroup><article  id="looking-toward-gen-r">
+
+<p>The plan is to proceed as in Drysdale&#8230;</p>
+
+<ol class = 'build'>
+<li>May examine performance of different parcel-schemes
+
+<ul class = 'build'>
+<li>Power et al&#39;s spheres, but also Yeo, voxelwise, or other techniques</li>
+</ul></li>
+<li>Define canonical variates based one
+
+<ul class = 'build'>
+<li>CBCL items, sub-factor (e.g., Fear, Dist, Ext) scores, or residuals after accounting for general P factor</li>
+</ul></li>
+<li>Cluster based on
+
+<ul class = 'build'>
+<li>rsfMRI canonical variates, CBCL items (as comparison)</li>
+<li>Cluster across heterogeneity</li>
+</ul></li>
+</ol>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Prediction</h2></hgroup><article  id="prediction">
+
+<p>What do we mean by this word?</p>
+
+</article></slide><slide class=""><hgroup><h2>Roughly two kinds</h2></hgroup><article  id="roughly-two-kinds">
+
+<p>Important difference from association: You make a claim about an individual before you know the answer.</p>
+
+<ul class = 'build'>
+<li>Diagnostic: can I know something about an individual based on other characterstics
+
+<ul class = 'build'>
+<li>Can we figure out someone&#39;s mental health diagnostic status from rsfMRI</li>
+</ul></li>
+<li>Forecasting: can I know an individual&#39;s future state based on their state today
+
+<ul class = 'build'>
+<li>Can we tell if someone will develop psychopathology tomorrow based on everything we know about them today</li>
+</ul></li>
+<li>What does Drysdale do?</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>What do we get from focusing on prediction?</h2></hgroup><article  id="what-do-we-get-from-focusing-on-prediction">
+
+<ul class = 'build'>
+<li>Well, we can predict things</li>
+<li>It&#39;s a severe metric for the presence of predictive information in our data+model</li>
+<li>Predictive performance is a very good common metric for comparing approaches</li>
+<li>With a decently sized sample, it gives you good information about what you might expect from a replication</li>
+<li>Further reading: Yarkoni &amp; Westfall (2016) Choosing Prediction&#8230;</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>How Drysdale et al use prediction?</h2></hgroup><article  id="how-drysdale-et-al-use-prediction">
+
+<p><img src="figures/pred_rez1.png" style="width:50%;float:left" /><img src="figures/pred_rez2.png" style="width:50%;float:left" /></p>
+
+</article></slide><slide class=""><hgroup><h2>for rTMS associaitons&#8230;</h2></hgroup><article  id="for-rtms-associaitons...">
+
+<p><img src="figures/pred_tms_rez1.png" style="width:50%;float:left" /><img src="figures/pred_tms_rez2.png" style="width:50%;float:left" /></p></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "index_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

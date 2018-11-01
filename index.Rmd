@@ -1,0 +1,270 @@
+---
+title: "Introduction and Discussion of Dysdale et al."
+author: "John Flournoy"
+date: "2018-11-01"
+output: 
+  ioslides_presentation:
+    incremental: true
+    widescreen: true
+    mathjax: local
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = F, message = F, error = F)
+```
+
+# Origin story
+
+## Where I started: What is the nature of reality?
+
+_inspired by Nessa_
+
+- Drilling into the micro with physics
+- Decomposing consciousness
+- Neuropharmacology of romantic love
+- Understanding other minds
+- Grad school! Social effects on decision making, motivation, learning
+- **Application of psychological science to physical and mental health risks faced by adolescents.**
+
+## What have I been working on?
+
+- <div style = "float:left;width:30%;padding-right:1em">How adolescent development of empathy is related to prosocial behavior 
+
+    <img src = 'figures/empathy.png' style="height:6em" /></div>
+- <div style = "float:left;width:30%;padding-right:1em">Lifespan development of personality & values 
+
+    <img src = 'figures/value_dev.png' style="height:10em;display:inline" /></div>
+- <div style = "float:left;width:30%;padding-right:1em">Association between SES and temporal discounting 
+
+    <img src = 'figures/discounting_task.png' style="height:6em" />
+
+    <img src = 'figures/discounting_eq.png' style="height:3em" /></div>
+
+- and the diss...
+
+## Measuring social motives via RL
+
+- _Goal of research program:_ examine adolescent behavior through a functional lens 
+    - Assume that behavior is in part directed toward satisfying developing social motivations for status and romantic relationships.
+- _Problem:_ measuring motivations via a behavioral mechanism
+- _Solution:_ describe how social content (related to implicit motives) potentiates reinforcement learning (via stimulus salience)
+    - How does learning, and social potentiation of learning, differ across adolescent development?
+
+## Social motives affect learning
+
+<img src="figures/trial_by_trial.png" /> 
+
+## Learning improves through adolescence
+
+<img src="figures/poptageplot-1.png" /> 
+
+## Learning potentiation is stable
+
+<img src="figures/poptdiffageplot-1.png" /> 
+
+## Looking ahead...
+
+1. How do daily emotional dynamics relate to stress and psychopathology symptoms?
+2. **As children enter adolescence, can we identify who is at risk for psychopathology?**
+
+# INTERMISSION
+
+## Biotyping and prediction in Generation R
+
+Collaborator: Henning Tiemeier, MA, MD, PhD; professor HSPH
+
+The Generation R Study is a large, prospective population-based birth-cohort in which nearly 10,000 pregnant mothers were recruited between 2002 and 2006 with repeated measurements in the children and their parents over time.
+
+- 3,439 9-to-11-year-old children w/rsfMRI (6 mins)
+- CBCL from primary and secondary caregivers
+- DISC-YC (218 w/a diagnosis, 460 dx ruled out)
+- Stressful Life Events Questionnaire
+
+
+## Biotypes and Prediction
+
+Drysdale, A. T., Grosenick, L., Downar, J., Dunlop, K., Mansouri, F., Meng, Y., … Liston, C. (2016). Resting-state connectivity biomarkers define neurophysiological subtypes of depression. Nature Medicine, 23(1), 28–38. https://doi.org/10.1038/nm.4246
+
+1. Clustering based on rsfMRI to define Biotypes
+2. Predicting diagnostic category with rsfMRI (with the help of biotypes)
+
+# Clustering patients into depression subtypes
+
+**Why are there clusters in the first place? Do they vary by kind or continuous variation? Do these clusters appear in healthy populations as well? - Gina**
+
+## Taxonomy versus Dimensionality
+
+>A taxon is a nonarbitrary class whose existence is conjectured
+as an empirical question, not a mere semantic convenience. Numerous taxa are
+known to exist in nature and society.... What personality types, if any, occur in the nonpathological
+population remains to be researched by sophisticated methods, and cannot be
+settled by fiat or "dimensional" preference. The intuitive concept of taxonicity
+is to be explicated by a combination of formal-numerical and causal criteria.
+Taxometric methods should include consistency tests that provide Popperian
+risk of strong discorroboration. (Meehl, 1992)
+
+"Differences of kind rather than degree"
+
+## Dimensional example
+
+>[Dimensional models]...treat underlying liability as a continuous phenomenon, with individuals varying
+along a continuous, graded range of liability to disorder. Another tractable possibility is to treat
+the liabilities as discrete, with individuals being members of discrete classes or groups of
+individuals. Under the former conceptualization, liability represents a continuum of risk to
+disorder; under the latter conceptualization, liability represents types or categories of risk to
+disorder. (Krueger & Markin, 2006) 
+
+<img src="figures/krueger_fig2.png" style="width:60%;float:right" /> Powerful for describing comorbidity
+
+## Taxometric example
+
+```{r echo = F, message = F, error = F, warning = F,  eval = F}
+data(iris)
+GGally::ggpairs(iris, columns = 1:4,
+                diag = list(continuous=function(data,mapping,...) {
+                  ggplot2::ggplot(data,mapping) +
+                    ggplot2::geom_histogram(...)
+                }), upper = list(continuous = 'blank'))
+```
+
+## Taxometric example
+
+```{r echo = F, message = F, error = F, warning = F, eval = F}
+GGally::ggpairs(iris, mapping = ggplot2::aes(color = Species), columns = 1:4, 
+                diag = list(continuous=function(data,mapping,...) {
+                  ggplot2::ggplot(data,mapping) +
+                    ggplot2::geom_histogram(ggplot2::aes(fill = Species), ...)
+                }), upper = list(continuous = 'blank'))
+```
+
+## Clustering algorithms
+
+Let's say we know there are 3 species, but we don't know which is which.
+
+<div style = 'width:40%; float:right'>
+
+```{r}
+clusters <- hclust(dist(iris[, 1:4]))
+clusterCut <- cutree(clusters, k = 3)
+knitr::kable(table(clusterCut, iris$Species))
+```
+
+</div>
+
+<div style = 'float:left; width = 40%'>
+
+```{r fig.width = 6, fig.height=2.25, echo = F}
+par(mar=c(0, 4, 4, 2))
+plot(clusters, xlab = NA, sub = NA)
+abline(a = 3.5, b = 0)
+```
+</div>
+
+<br /><br />
+
+- It's easy to separate Setosa, but not so much Versicolor & Virginica. Other choices of algorithm and variable-sets (I used all 4) produce better results.
+
+## Drysdale et al's clustering
+
+<img src="figures/fig1_ef.png" style="width:60%" />
+
+- Back to Gina's questions: 
+    - Why would we expect people to be separable into subtypes? 
+    - Why is this useful?
+
+- What variables are they using as input to the cluster algorithm?
+    - Canonical Variates
+
+## Canonical Correlation Analysis
+
+What is it?
+
+- In regression, you want the linear combination of predictor variables, $X$, that gets you closest to your observed outcomes, $y$:
+
+    $y = \beta_0 + \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + ... + \beta_n \cdot x_n + \epsilon$
+
+    In other words, we want to choose all the $\beta$s so that $\epsilon$ is as small as possible.
+
+- If you have multiple $y$ variables, CCA does something like this _on both sides_\*:
+
+    $\pi_1 \cdot y_1 + \pi_2 \cdot y_2 + ... + \pi_n \cdot y_n = \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + ... + \beta_n \cdot x_n + \epsilon$
+
+<div style='font-size: .5em'>\*_for conceptual purposes only_. Find a good geometric explanation  [here](https://stats.stackexchange.com/questions/65692/how-to-visualize-what-canonical-correlation-analysis-does-in-comparison-to-what), and mathy stuff [here](https://www.cs.cmu.edu/~tom/10701_sp11/slides/CCA_tutorial.pdf)</div>
+
+## Canonical Variates
+
+- You find the set of $\pi$ and $\beta$ coefficients so that when you do the math on both sides, the result is maximally correlated.
+- For example, for 3 $x$ and 3 $y$ variables $V_y = p_1 \cdot y_1 + p_2\cdot y_2 + p_3\cdot y_3$, $V_x = b_1 \cdot x_1 + b_2\cdot x_2 + b_3\cdot x_3$, you want to set all the $p$s and $b$s so that you maximize the correlation between $V_y$ and $V_x$.
+- $V_y$ and $V_x$ are now your first pair of *Cannonical Variates*.
+- You can do this again to get another pair that isn't correlated to the first pair.
+
+## Understanding how clustering inputs are constructed
+
+For n = 220 diagnosed with depression (low comorbidity)
+
+- <img src="figures/rsfmri_input.png" style="float:right;width:60%" /> Resting state input: Select only those 33,154 correlations which were significantly ($\alpha = .005$) correlated with at least 1 of 17 HAMD-17 responses
+- Depression symptom input: 17 HAMD-17 items
+- CCA(selected rsfMRI, HAMD) produced 2 pairs of canonical variates
+
+## Interpreting clusters
+
+- <img src="figures/fig1_f.png" style="float:right;width:37%"/> Clustering is done on two weighted sums of rsfMRI correlations that best approximate weighted sums of depression symptoms.
+- Gina's final question: What would we expect from non-diagnosed participants? <img src="figures/all_sympt.png" />
+
+## Interpreting rsfMRI differences
+
+<img src="figures/fig2_b.png" style="width:30%" />
+<img src="figures/fig2_e.png" style="width:96%" />
+
+## Looking toward Gen R
+
+The plan is to proceed as in Drysdale...
+
+1. May examine performance of different parcel-schemes
+    - Power et al's spheres, but also Yeo, voxelwise, or other techniques
+2. Define canonical variates based one
+    - CBCL items, sub-factor (e.g., Fear, Dist, Ext) scores, or residuals after accounting for general P factor
+3. Cluster based on
+    - rsfMRI canonical variates, CBCL items (as comparison)
+    - Cluster across heterogeneity
+
+# Prediction
+
+What do we mean by this word?
+
+
+## Roughly two kinds
+
+Important difference from association: You make a claim about an individual before you know the answer.
+
+- Diagnostic: can I know something about an individual based on other characterstics
+    - Can we figure out someone's mental health diagnostic status from rsfMRI
+- Forecasting: can I know an individual's future state based on their state today
+    - Can we tell if someone will develop psychopathology tomorrow based on everything we know about them today
+- What does Drysdale do?
+
+## What do we get from focusing on prediction?
+
+- Well, we can predict things
+- It's a severe metric for the presence of predictive information in our data+model
+- Predictive performance is a very good common metric for comparing approaches
+- With a decently sized sample, it gives you good information about what you might expect from a replication
+- Further reading: Yarkoni & Westfall (2016) Choosing Prediction...
+
+## How Drysdale et al use prediction?
+
+<img src="figures/pred_rez1.png" style="width:50%;float:left" /><img src="figures/pred_rez2.png" style="width:50%;float:left" />
+
+## for rTMS associaitons...
+
+<img src="figures/pred_tms_rez1.png" style="width:50%;float:left" /><img src="figures/pred_tms_rez2.png" style="width:50%;float:left" />
+
+## Looking toward Gen R
+
+- Use prediction to assess what inputs & psychopathology characterizations work best
+- But what to predict?
+    - Continuous CBCL symptoms
+    - CBCL severity quantiles (top 20% v bottom 50%?)
+    - DISC diagnosis in small subset
+
