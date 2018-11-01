@@ -161,6 +161,12 @@
 
 <p><img src="figures/poptdiffageplot-1.png" /></p>
 
+</article></slide><slide class=""><hgroup><h2>Decomposing using computational modeling</h2></hgroup><article  id="decomposing-using-computational-modeling">
+
+<p>Potentiation due to learning rate, age effects due to reduced reponse to large rewards, increased attention</p>
+
+<p><img src="figures/model_age.png" /></p>
+
 </article></slide><slide class=""><hgroup><h2>Looking ahead&#8230;</h2></hgroup><article  id="looking-ahead...">
 
 <ol class = 'build'>
@@ -214,7 +220,11 @@
 
 </article></slide><slide class=""><hgroup><h2>Taxometric example</h2></hgroup><article  id="taxometric-example">
 
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="720" /></p>
+
 </article></slide><slide class=""><hgroup><h2>Taxometric example</h2></hgroup><article  id="taxometric-example-1">
+
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="720" /></p>
 
 </article></slide><slide class=""><hgroup><h2>Clustering algorithms</h2></hgroup><article  id="clustering-algorithms">
 
@@ -374,13 +384,46 @@
 <li>Further reading: Yarkoni &amp; Westfall (2016) Choosing Prediction&#8230;</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>How Drysdale et al use prediction?</h2></hgroup><article  id="how-drysdale-et-al-use-prediction">
+</article></slide><slide class=""><hgroup><h2>What does this look like procedurally?</h2></hgroup><article  id="what-does-this-look-like-procedurally">
+
+<ul class = 'build'>
+<li>Cross validated prediction means building a model (e.g., estimating regression coefficients) in one set of data&#8230;</li>
+<li>and then using that model (e.g., the estimated coefficients) to see how well they work with new data \(X\) to predict \(y\)</li>
+<li>For predicting categories (diagnosed versus healthy control) your output is
+
+<ul class = 'build'>
+<li>Accuracy: how many true positives and true negatives as a proportion of all cases</li>
+<li>Sensitivity: true positives out of all positives (correct detection without positive errors)</li>
+<li>Specificity: true negatives out of all negatives (correct rejection without negative errors)</li>
+</ul></li>
+<li>What, actually, did they do?</li>
+<li>What could go wrong?</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>How do Drysdale et al use prediction metrics?</h2></hgroup><article  id="how-do-drysdale-et-al-use-prediction-metrics">
+
+<p>Fig. 3 &#8211; Train N = 711 (333 dx dep, 378 hc; 47%/53%), test N = 477 (125 dx dep, 352 hc; 26%/74%)</p>
 
 <p><img src="figures/pred_rez1.png" style="width:50%;float:left" /><img src="figures/pred_rez2.png" style="width:50%;float:left" /></p>
 
 </article></slide><slide class=""><hgroup><h2>for rTMS associaitons&#8230;</h2></hgroup><article  id="for-rtms-associaitons...">
 
-<p><img src="figures/pred_tms_rez1.png" style="width:50%;float:left" /><img src="figures/pred_tms_rez2.png" style="width:50%;float:left" /></p></article></slide>
+<p>Fig. 4 &#8211; Train N = 124 (70 responders, 54 non-responders; 56%/44%), test N = 30 (?, ?)</p>
+
+<p><img src="figures/pred_tms_rez1.png" style="width:50%;float:left" /><img src="figures/pred_tms_rez2.png" style="width:50%;float:left" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Looking toward Gen R</h2></hgroup><article  id="looking-toward-gen-r-1">
+
+<ul class = 'build'>
+<li>Use prediction to assess what inputs &amp; psychopathology characterizations work best</li>
+<li>But what to predict?
+
+<ul class = 'build'>
+<li>Continuous CBCL symptoms</li>
+<li>CBCL severity quantiles (top 20% v bottom 50%?)</li>
+<li>DISC diagnosis in small subset</li>
+</ul></li>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>

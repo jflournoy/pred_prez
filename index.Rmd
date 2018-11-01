@@ -63,6 +63,12 @@ _inspired by Nessa_
 
 <img src="figures/poptdiffageplot-1.png" /> 
 
+## Decomposing using computational modeling
+
+Potentiation due to learning rate, age effects due to reduced reponse to large rewards, increased attention
+
+<img src="figures/model_age.png" /> 
+
 ## Looking ahead...
 
 1. How do daily emotional dynamics relate to stress and psychopathology symptoms?
@@ -119,7 +125,7 @@ disorder. (Krueger & Markin, 2006)
 
 ## Taxometric example
 
-```{r echo = F, message = F, error = F, warning = F,  eval = F}
+```{r echo = F, message = F, error = F, warning = F}
 data(iris)
 GGally::ggpairs(iris, columns = 1:4,
                 diag = list(continuous=function(data,mapping,...) {
@@ -130,7 +136,7 @@ GGally::ggpairs(iris, columns = 1:4,
 
 ## Taxometric example
 
-```{r echo = F, message = F, error = F, warning = F, eval = F}
+```{r echo = F, message = F, error = F, warning = F}
 GGally::ggpairs(iris, mapping = ggplot2::aes(color = Species), columns = 1:4, 
                 diag = list(continuous=function(data,mapping,...) {
                   ggplot2::ggplot(data,mapping) +
@@ -252,11 +258,26 @@ Important difference from association: You make a claim about an individual befo
 - With a decently sized sample, it gives you good information about what you might expect from a replication
 - Further reading: Yarkoni & Westfall (2016) Choosing Prediction...
 
-## How Drysdale et al use prediction?
+## What does this look like procedurally?
+
+- Cross validated prediction means building a model (e.g., estimating regression coefficients) in one set of data...
+- and then using that model (e.g., the estimated coefficients) to see how well they work with new data $X$ to predict $y$
+- For predicting categories (diagnosed versus healthy control) your output is
+    - Accuracy: how many true positives and true negatives as a proportion of all cases
+    - Sensitivity: true positives out of all positives (correct detection without positive errors)
+    - Specificity: true negatives out of all negatives (correct rejection without negative errors)
+- What, actually, did they do?
+- What could go wrong?
+    
+## How do Drysdale et al use prediction metrics?
+
+Fig. 3 -- Train N = 711 (333 dx dep, 378 hc; 47%/53%), test N = 477 (125 dx dep, 352 hc; 26%/74%)
 
 <img src="figures/pred_rez1.png" style="width:50%;float:left" /><img src="figures/pred_rez2.png" style="width:50%;float:left" />
 
 ## for rTMS associaitons...
+
+Fig. 4 -- Train N = 124 (70 responders, 54 non-responders; 56%/44%), test N = 30 (?, ?)
 
 <img src="figures/pred_tms_rez1.png" style="width:50%;float:left" /><img src="figures/pred_tms_rez2.png" style="width:50%;float:left" />
 
