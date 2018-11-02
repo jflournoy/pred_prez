@@ -53,21 +53,21 @@ _inspired by Nessa_
 
 ## Social motives affect learning
 
-<img src="figures/trial_by_trial.png" /> 
+<img src="figures/trial_by_trial.png" style="width:40%"/> 
 
 ## Learning improves through adolescence
 
-<img src="figures/poptageplot-1.png" /> 
+<img src="figures/poptageplot-1.png" style="width:60%"/> 
 
 ## Learning potentiation is stable
 
-<img src="figures/poptdiffageplot-1.png" /> 
+<img src="figures/poptdiffageplot-1.png" style="width:60%"/> 
 
 ## Decomposing using computational modeling
 
-Potentiation due to learning rate, age effects due to reduced reponse to large rewards, increased attention
+Potentiation due to learning rate, age effects due to increasing reponse to large rewards, increased attention
 
-<img src="figures/model_age.png" /> 
+<img src="figures/model_age.png" style="width:60%"/> 
 
 ## Looking ahead...
 
